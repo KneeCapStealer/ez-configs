@@ -157,7 +157,7 @@ let
               ${mkName host} = homeManagerConfiguration {
                 inherit pkgs;
                 extraSpecialArgs = extraSpecialArgs //
-                  { inherit ezModules; } //
+                  { inherit ezModules host; } //
                   (if passInOsConfig then { osConfig = config; } else { });
                 modules = modules pkgs.stdenv;
               };
