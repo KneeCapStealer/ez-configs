@@ -84,7 +84,7 @@ let
           hmModule
           ({ pkgs, ... }: {
             home-manager = {
-              extraSpecialArgs = extraSpecialArgs // { ezModules = ezHomeModules; };
+              extraSpecialArgs = extraSpecialArgs // { ezModules = ezHomeModules; host = name; };
               users = mapAttrs
                 (_: user:
                   if userModules ? ${user} then
